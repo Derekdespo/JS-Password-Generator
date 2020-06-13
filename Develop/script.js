@@ -11,6 +11,12 @@ var lowCase = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", 
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbol = ["!", "@", "#", "$", "%", "^", "&", "*", "~", "?", "_", "+", "/",]
 
+// Global variables (we will need to get values for them later from user input)
+var okLength = "";
+var okUpCase = "";
+var okLowCase = "";
+var okNum = "";
+var okSym = "";
 
 
 
