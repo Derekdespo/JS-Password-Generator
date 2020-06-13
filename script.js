@@ -100,7 +100,10 @@ function writePassword() {
 
   // The left variable represents the querySelector linking us to the password id in the html
   //The right variable is our generated password from the generatePassword function.
-  passwordText.value = password;
+  passwordText.value = password; {
+    // Alert should just let the user know that pressing okay will reveal their new password
+    alert("Awesome! Press OK to see your new password below");
+  }
   // I wanted to make this text appear next to the new password, but I cant figure out how ... keep researching ...
   // passwordText.value = password + " Here is your new password!";
 }
