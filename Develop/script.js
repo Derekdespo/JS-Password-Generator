@@ -18,6 +18,23 @@ var okLowCase = "";
 var okNum = "";
 var okSym = "";
 
+// Now we need to ask the user some questions to determine the values of the above variables to see which arrays will be called upon later on
+// We start by creating the function for generate password which we will call upon later on
+function generatePassword() {
+   okLength = prompt("Number of characters for your new password: ");
+
+  // Now we want to make sure that the password is at least 8 chracaters and no more than 128 (we will use a while loop)
+  // So if they choose an amount that doesn't fit our parameters, we want to inform them of the parameters and ask again for a length
+  while(okLength <= 7 || okLength >= 129) {
+    alert("Your password should be no less than 8 characters and no more than 128. Please choose a new length for your password");
+    okLength = prompt("Number of character you'd like in your new password: ");
+  }
+
+  // If the users desired length fits into our parameters, then we should alert them with how long it will be
+  alert("Okay, great! Your password will be " + okLength + " characters long.")
+}
+
+
 
 
 
