@@ -17,4 +17,6 @@ Lastly we returned that string and applied it to the html
 
 Hopefully my description made sense :) 
 
+ https://derekdespo.github.io/JS-Password-Generator/
+
 <img width="1440" alt="Screen Shot 2020-06-12 at 11 35 08 PM" src="https://user-images.githubusercontent.com/65831812/84559772-a43e1900-ad0b-11ea-8447-a06ce4bcdf2b.png">
