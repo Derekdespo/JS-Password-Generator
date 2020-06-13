@@ -52,14 +52,40 @@ function generatePassword() {
 
   // Now that the user has given values to our global variables, we need to apply that to the password we will generate
   // Should create an empty array that can be filled by the arrays at the top of the page depending on the boolean values from our confirm questions
+  // The empty array yourPass will hold whatever characters were approved by the user
   var yourPass = []
   // if statement that will say if confirm question is true then add the corresponding array to yourPass
+  //.concat basically combines the arrays, it pulls one into the other
+  // if okUpCase is true then we pull in the upCase array
   if (okUpCase === true) {
-    yourPass = yourPass.concat(upCase)
+    yourPass = yourPass.concat(upCase);
   }
-  else (okUpCase === false) 
-yourPass = yourPass.concat("")
-  
+  // if okLowCase is true then we pull in the lowCase array
+  if (okLowCase === true) {
+    yourPass = yourPass.concat(lowCase);
+  }
+// if okNum is true then we pull in the number array
+  if (okNum === true) {
+    yourPass = yourPass.concat(number);
+  }
+// if okSym is true then we pull in the symbol array
+  if (okSym === true) {
+    yourPass = yourPass.concat(symbol);
+  }
+
+  // Okay so now once all the confirm questions should be answered causeing a new array to be built, we will need to make a string for the generated password to go into
+  // Creating an empty string: calling it newPass
+  var newPass = ""
+   
+  // adding a for loop should let us set the length for the new password as well as randomly pick options from the yourPass array
+  for (var i = 0; i < okLength; i++) {
+    // Math.floor and Math.random will draw a random number between 0-1 which we should multipl by the length of the yourPass array
+    // The initial arrays we made will fall into the yourPass array as the user answers the confirm questions
+    // The length of the yourPass array will be determined by the users responses to those questions
+    newPass = newPass + yourPass[Math.floor(Math.random() * yourPass.length)];
+  }
+  // We need to set the randomly generated newPass string up to replace the password id text, otherwise the result will return as undefined
+  return newPass;
 }
 
 
@@ -67,11 +93,16 @@ yourPass = yourPass.concat("")
 
 
 // Write password to the #password input
+// We need to confirm the function above and set its results equal to the variable we set for the password id which we pulled from html doc
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  // The left variable represents the querySelector linking us to the password id in the html
+  //The right variable is our generated password from the generatePassword function.
   passwordText.value = password;
+  // I wanted to make this text appear next to the new password, but I cant figure out how ... keep researching ...
+  // passwordText.value = password + " Here is your new password!";
 }
 
 
